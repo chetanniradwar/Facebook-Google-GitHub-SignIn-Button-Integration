@@ -1,0 +1,150 @@
+body{
+    background-color: rgb(17, 8, 27);
+    overflow-x: hidden;
+
+}
+html{
+    overflow-x: hidden;
+
+}
+.heading .col-lg-6
+{
+    border: 2px solid greenyellow;
+}
+.google
+{
+    background-color: #4285F4;
+}
+.facebook
+{
+    background-color: #4267B2;
+}
+.github
+{
+    background-color: #279a43;
+}
+.video{
+    
+    position: relative;
+    z-index: -5 !important;
+
+  
+   
+   
+}
+video{
+    /* max-width: 100%;
+    object-fit: cover;
+  object-position: center center;  */
+  /* left: 50%; */
+  /* max-height: 100%; */
+  border: 2px solid grey !important;
+  max-width: 140%;
+   position: absolute; 
+   left:-20%;
+   right:-20%;
+   /* top: 50%; */
+  transform: translate(-0%,-15%); 
+} 
+.navbar a
+{
+    color: #fff !important;
+}
+.header-text
+{
+    font-size: 5vw;
+    font-weight: bolder;
+}
+.sub-text
+ {  
+     font-size:2vw;
+    color: #8193b2;
+}
+@media (max-width:1500px)
+{
+    #astronut
+    {
+       
+        top: -20em !important; 
+    }
+ @media (max-width:1200px)
+{
+    .header-text ,.sub-text
+    {
+        text-align: center !important;
+    }
+    #astronut
+    {
+        right: 30% !important;
+        top: -10em !important; 
+    }
+    
+}
+@media (max-width:600px)
+{
+    .btn-login .btn
+    {
+        margin:1em auto;
+        display: block !important;
+       
+    }
+    video
+    {
+    
+    transform:translate(-12%,-15%);
+   max-width:180%;
+    }
+}
+
+@media (max-width:500px)
+{
+    #astronut
+    {
+       
+        top: -5em !important; 
+    }
+}
+
+}
+
+.svg-pic
+{
+    position: relative;
+  border: 3px solid red;
+ 
+
+  height: 70vh;
+}
+.svg-pic svg{
+    object-fit: cover;
+    height: 20px;
+    width: 100%;
+    height: 3%;
+}
+#astronut
+{ border: 2px solid violet;
+    position: absolute;
+    max-width: 40%;
+    right: 0%;
+   top:-30em;
+   
+    z-index: 500;
+}
+
+.moon
+{
+   position: absolute;
+   width: 100%;
+   bottom: 0%;
+   top: 3%;
+   z-index: 1;
+    background-color: #fff;
+    color: white;
+    
+
+}
+
+.heading .row
+{
+    height:90vh;
+}
