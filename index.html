@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="google-signin-client_id" content="258212949096-ffidj50r8jftp5s6duc93e4927pskcdd.apps.googleusercontent.com">
   <link rel="stylesheet" href="CSS/bootstrap.css">
   <link rel="stylesheet" href="CSS/index.css">
   <title>LOGIN PAGE</title>
@@ -46,7 +46,7 @@
           and most advanced development platform in the world.</h3>
         <div class="btn-login">
           <!-- <div class="text-white " >Sign In Options</div> -->
-          <button class="btn google text-white">Sign In with Google</button>
+          <div class="g-signin2 d-inline-block" data-onsuccess="onSignIn"></div>
           <button class="btn facebook text-white">Sign In with Facebook</button>
           <button class="btn github text-white">Sign In with GitHub</button>
         </div>
@@ -78,5 +78,6 @@
 <script src="JS/jquery-2.1.4.js"></script>
 <script src="JS/bootstrap.js"></script>
 <script src="JS/index.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </html>
