@@ -21,22 +21,7 @@ localStorage.setItem("email",email);
 }
 
   // Facebook login
-  FB.login(function(response)
-  {
-    if(response.authResponse){
-      console.log("fetching info from facebook");
-      FB.api('/me', function(response)
-      {
-        name=response.name;
-        email=response.email;
-        profilepic=response.public_profile;
-        localStorage.setItem("username",name);
-        localStorage.setItem("picture",profilepic);
-        localStorage.setItem("email",email);
-      });
-      user_detail= window.open('user_details.html', '_self');
-    }
-  },{scope:'name,email,public_profile'});
+  
 
   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
     console.log('statusChangeCallback');
@@ -69,7 +54,22 @@ localStorage.setItem("email",email);
       statusChangeCallback(response);        // Returns the login status.
     });
     };
-
+    FB.login(function(response)
+    {
+      if(response.authResponse){
+        console.log("fetching info from facebook");
+        FB.api('/me', function(response)
+        {
+          name=response.name;
+          email=response.email;
+          profilepic=response.public_profile;
+          localStorage.setItem("username",name);
+          localStorage.setItem("picture",profilepic);
+          localStorage.setItem("email",email);
+        });
+        user_detail= window.open('user_details.html', '_self');
+      }
+    },{scope:'name,email,public_profile'});
   
 
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
