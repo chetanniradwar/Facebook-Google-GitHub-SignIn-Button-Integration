@@ -42,7 +42,7 @@ localStorage.setItem("email",email);
       appId      : '367986131263200',
       cookie     : true,
       xfbml      : true,
-      version    : '10.0'
+      version    : 'v10.0'
     });
       
     FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
