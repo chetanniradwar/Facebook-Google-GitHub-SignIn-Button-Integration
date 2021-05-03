@@ -1,27 +1,22 @@
-
 function onSignIn(googleUser) {
-  var user_detail= window.open('user_details.html', '_self');
-  user_detail.onload = function(){
-  
-    var profile = googleUser.getBasicProfile();
-    var imgtag=document.getElementById("#user-img");
-    var nametag= document.getElementById("#user-name");
-   var emailtag= document.getElementById("#user-email");
-   imgtag.src=profile.getImageUrl();
-   nametag.innerHTML='Name: ' + profile.getName();
-   emailtag.innerHTML='Email: ' + profile.getEmail();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
-  }
+  user_detail= window.open('user_details.html', '_self');
+ 
+ 
+  var profile = googleUser.getBasicProfile();
+  var name,profilepic,email;
+ name=profile.getName();
+ profilepic=profile.getImageUrl();
+ email=profile.getEmail();
+ 
+  //  alert('Name: ' + profile.getName());
+  //  alert('Image URL: ' + profile.getImageUrl());
+  //  alert('Email: ' + profile.getEmail());
+localStorage.setItem("username",name);
+localStorage.setItem("picture",profilepic);
+localStorage.setItem("email",email);
 
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
+
+}
 
   // Facebook login
   window.fbAsyncInit = function() {

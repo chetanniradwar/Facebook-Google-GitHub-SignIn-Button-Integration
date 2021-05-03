@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="258212949096-ffidj50r8jftp5s6duc93e4927pskcdd.apps.googleusercontent.com">
     <link rel="stylesheet" href="CSS/bootstrap.css">
     <link rel="stylesheet" href="CSS/user_details.css">
     <title>User Details</title>
@@ -38,7 +39,7 @@
               
               <div class="details-card col-lg-6 text-center mt-5">
                 <div class="display-4 mb-4">WELCOME</div>
-                  <div id="user-img"><img src="img/blank-profile-picture-973460_1280.png" height="100px" width="100px" alt="Profile image"></div>
+                  <div id="user-img"><img id="img-tag" src="img/blank-profile-picture-973460_1280.png" height="100px" width="100px" alt="Profile image"></div>
                   <div id="user-name">NAME:</div>
                   <div id="user-email">EMAIL:</div>
                   <button class="btn btn-primary "><a href="#" class="text-white text-decoration-none" onclick="signOut();">Sign out</a></button>
@@ -52,5 +53,6 @@
 </body>
 <script src="JS/jquery-2.1.4.js"></script>
 <script src="JS/bootstrap.js"></script>
-<script src="JS/index.js"></script>
+<script src="JS/user_details.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </html>
