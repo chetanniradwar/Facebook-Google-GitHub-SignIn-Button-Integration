@@ -1,6 +1,13 @@
 
 function onSignIn(googleUser) {
+    location.href='user_details.html';
     var profile = googleUser.getBasicProfile();
+    var imgtag=document.getElementById("#user-img");
+    var nametag= document.getElementById("#user-name");
+   var emailtag= document.getElementById("#user-email");
+   imgtag.src=profile.getImageUrl();
+   nametag.innerText='Name: ' + profile.getName();
+   nametag.innerText='Email: ' + profile.getEmail();
     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
@@ -12,10 +19,10 @@ function onSignIn(googleUser) {
   // Facebook login
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{your-app-id}',
+      appId      : '367986131263200',
       cookie     : true,
       xfbml      : true,
-      version    : '{api-version}'
+      version    : '10.0'
     });
       
     FB.AppEvents.logPageView();   
