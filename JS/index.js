@@ -21,12 +21,31 @@ localStorage.setItem("email",email);
 }
 
   // Facebook login
+  FB.login(function(response)
+  {
+    if(response.authResponse){
+      console.log("fetching info from facebook");
+      FB.api('/me', function(response)
+      {
+        name=response.name;
+        email=response.email;
+        profilepic=response.public_profile;
+        localStorage.setItem("username",name);
+        localStorage.setItem("picture",profilepic);
+        localStorage.setItem("email",email);
+      });
+      user_detail= window.open('user_details.html', '_self');
+    }
+  },{scope:'name,email,public_profile'});
 
   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
     console.log('statusChangeCallback');
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
+      // testAPI();
+      FB.login();
+
+
     } else {                                 // Not logged into your webpage or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
