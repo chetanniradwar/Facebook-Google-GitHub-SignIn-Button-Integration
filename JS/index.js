@@ -98,17 +98,17 @@ function PlayBack(){
 
   
 
-  // window.fbAsyncInit = function() {
-  //   FB.init({
-  //     appId      : '{your-app-id}',
-  //     cookie     : true,
-  //     xfbml      : true,
-  //     version    : '{api-version}'
-  //   });
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
       
-  //   FB.AppEvents.logPageView();   
+    FB.AppEvents.logPageView();   
       
-  // };
+  };
 
   // (function(d, s, id){
   //    var js, fjs = d.getElementsByTagName(s)[0];
