@@ -1,6 +1,6 @@
 
 function onSignIn(googleUser) {
-    
+  window.open('user_details.html', '_self');
     var profile = googleUser.getBasicProfile();
     var imgtag=document.getElementById("#user-img");
     var nametag= document.getElementById("#user-name");
@@ -12,7 +12,7 @@ function onSignIn(googleUser) {
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    location.href='user_details.html';
+   
   }
 
 
