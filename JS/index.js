@@ -1,7 +1,7 @@
 
 function onSignIn(googleUser) {
-  window.open('user_details.html', '_self');
-  window.onload = function(){
+  var user_detail= window.open('user_details.html', '_self');
+  user_detail.onload = function(){
   
     var profile = googleUser.getBasicProfile();
     var imgtag=document.getElementById("#user-img");
@@ -17,7 +17,11 @@ function onSignIn(googleUser) {
   }
   }
 
-
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
 
   // Facebook login
   window.fbAsyncInit = function() {
