@@ -1,10 +1,11 @@
+var name,profilepic,email;
 // Google Login 
 function onSignIn(googleUser) {
   user_detail= window.open('user_details.html', '_self');
  
  
   var profile = googleUser.getBasicProfile();
-  var name,profilepic,email;
+  
  name=profile.getName();
  profilepic=profile.getImageUrl();
  email=profile.getEmail();
@@ -57,7 +58,7 @@ localStorage.setItem("email",email);
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Thanks for logging in, ' + response.name + '!' +response.public_profile +response.email; 
     });
   }
 
