@@ -58,17 +58,22 @@ window.fbAsyncInit = function () {
 function fb_login() {
   FB.login(function (response) {
     if (response.authResponse) {
-      console.log("fetching info from facebook");
-      FB.api('/me', function (response) {
-        name = response.name;
-        email = response.email;
-        profilepic = response.public_profile;
-        localStorage.setItem("username", name);
-        localStorage.setItem("picture", profilepic);
-        localStorage.setItem("email", email);
-        user_detail = window.open('user_details.html', '_self');
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          console.log("fetching info from facebook");
+          FB.api('/me', function (response) {
+            name = response.name;
+            email = response.email;
+            profilepic = response.public_profile;
+            localStorage.setItem("username", name);
+            localStorage.setItem("picture", profilepic);
+            localStorage.setItem("email", email);
+            user_detail = window.open('user_details.html', '_self');
+          });
+        }
       });
-      
+
+
     }
   }, { scope: 'name,email,public_profile' });
 
