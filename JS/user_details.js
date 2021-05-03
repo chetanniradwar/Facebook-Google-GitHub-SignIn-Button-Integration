@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
     nametag.innerHTML = 'Name: ' + localStorage.getItem("username");
     emailtag.innerHTML = 'Email: ' + localStorage.getItem("email");
+    if(localStorage.getItem("picture")!=null)
     imgtag.src = localStorage.getItem("picture");
 
     console.log("inside userdetails");
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function signOut() {
-    
+
     gapi.load('auth2', function () {
         gapi.auth2.init();
           });

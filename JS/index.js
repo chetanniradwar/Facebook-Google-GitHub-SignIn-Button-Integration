@@ -1,3 +1,4 @@
+// Google Login 
 function onSignIn(googleUser) {
   user_detail= window.open('user_details.html', '_self');
  
@@ -38,3 +39,16 @@ localStorage.setItem("email",email);
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+
+
+  //  Video playback Speed
+ 
+ 
+function PlayBack(){
+
+    var vdo=document.getElementById("playback");
+  //  alert(vdo.playbackRate);
+  vdo.playbackRate=0.5;
+  // alert(vdo.playbackRate);
+  }

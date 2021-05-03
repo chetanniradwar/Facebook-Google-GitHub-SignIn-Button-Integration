@@ -1,29 +1,37 @@
 
-
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 footer{
     background: url("../img/wallpaper_footer_4Ksuper_wide_32_9.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center center;
     
 }
 .details-card
 {
     border: 1px solid grey;
     border-radius: 5px;
+    
 }
 footer{
-    position: absolute;
-    bottom:0;
-    height:30vh;
+    min-height:30vh;
     width:100%;
+    margin-top: auto;
 }
-.details-container
-{
-    border:2px solid black;
-    height: 60vh;
-}
+
 #user-img img
 {
     border-radius: 50%;
+}
+#user-name, #user-email
+{
+    font-size: 1.5rem;
+   
 }
