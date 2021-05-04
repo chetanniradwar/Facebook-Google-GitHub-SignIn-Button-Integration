@@ -68,7 +68,8 @@ function fb_login() {
             localStorage.setItem("username", name);
             localStorage.setItem("picture", profilepic);
             localStorage.setItem("email", email);
-            user_detail = window.open('user_details.html', '_self');
+            alert(name + " "+ email + " "+profilepic);
+            // user_detail = window.open('user_details.html', '_self');
           });
         }
       });
