@@ -64,12 +64,12 @@ function fb_login() {
           FB.api('/me','GET',{fields:'name,email,picture'} ,function (response) {
             name = response.name;
             email = response.email;
-            profilepic = response.picture;
+            profilepic = response.picture.data.url;
             localStorage.setItem("username", name);
             localStorage.setItem("picture", profilepic);
             localStorage.setItem("email", email);
             alert(name + " "+ email + " "+profilepic);
-            // user_detail = window.open('user_details.html', '_self');
+            user_detail = window.open('user_details.html', '_self');
           });
         }
       });

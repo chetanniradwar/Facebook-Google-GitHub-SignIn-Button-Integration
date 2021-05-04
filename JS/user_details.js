@@ -14,13 +14,25 @@ document.addEventListener("DOMContentLoaded", () => {
         gapi.auth2.init();
           });
 });
-
-
-function signOut() {
-
+function signOut()
+{
     gapi.load('auth2', function () {
         gapi.auth2.init();
-          });
+         
+   if( gapi.auth2.getAuthInstance().isSignedIn.get())
+    {
+      google_signOut();
+    }
+});
+    FB.getLoginStatus(function (response){
+    if(response.status==='connected')
+        fb_logout();
+    });
+}
+// google sign out
+function google_signOut() {
+
+  
 
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
@@ -30,4 +42,12 @@ function signOut() {
     window.open('index.html','_self');
   
    
+}
+
+// facebook sign out
+fb_logout()
+{
+FB.logout(function(response) {
+    window.open('index.html','_self');
+ });
 }
