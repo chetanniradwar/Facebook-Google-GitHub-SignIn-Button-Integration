@@ -24,7 +24,12 @@ function signOut()
       google_signOut();
     }
 });
-
+FB.getLoginStatus(function (response) {   // See the onlogin handler
+        statusChangeCallback(response);
+      });
+   
+      
+}
 window.fbAsyncInit = function () {
     FB.init({
       appId: '367986131263200',
@@ -33,11 +38,13 @@ window.fbAsyncInit = function () {
       version: 'v10.0'
     });
 }
-    FB.getLoginStatus(function (response){
-    if(response.status ==='connected')
+function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+  if(response.status ==='connected')
         fb_logout();
-    });
 }
+
 // google sign out
 function google_signOut() {
 
