@@ -61,7 +61,7 @@ function fb_login() {
       FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
           console.log("fetching info from facebook");
-          FB.api('/me', function (response) {
+          FB.api('/me','GET',{fields:'name,email,picture'} ,function (response) {
             name = response.name;
             email = response.email;
             profilepic = response.picture;
