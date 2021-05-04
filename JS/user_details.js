@@ -45,7 +45,7 @@ function google_signOut() {
 }
 
 // facebook sign out
-fb_logout()
+function fb_logout()
 {
 FB.logout(function(response) {
     window.open('index.html','_self');
