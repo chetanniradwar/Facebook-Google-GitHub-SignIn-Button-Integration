@@ -64,7 +64,7 @@ function fb_login() {
           FB.api('/me', function (response) {
             name = response.name;
             email = response.email;
-            profilepic = response.public_profile;
+            profilepic = response.picture;
             localStorage.setItem("username", name);
             localStorage.setItem("picture", profilepic);
             localStorage.setItem("email", email);
@@ -75,7 +75,7 @@ function fb_login() {
 
 
     }
-  }, { scope: 'name,email,public_profile' });
+  }, { scope: 'email,public_profile' });
 
 }
 // function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
