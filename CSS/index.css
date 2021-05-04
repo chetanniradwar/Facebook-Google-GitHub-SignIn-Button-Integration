@@ -13,8 +13,18 @@ html{
 }
 .google
 {
-    background-color: #4285F4;
+    background-color: #fff;
 }
+.google-div
+{
+    margin-top: 4px;
+   display: inline-block !important;
+    border: 5px solid #fff;
+    padding: 0 0;
+    height:42px;
+    border-radius: 4px;
+}
+
 .facebook
 {
     background-color: #4267B2;
@@ -28,7 +38,7 @@ html{
     position: relative;
     z-index: -5 !important;
 
-  
+
    
    
 }
@@ -82,7 +92,7 @@ video{
 }
 @media (max-width:600px)
 {
-    .btn-login .btn
+    .btn-login .btn-div
     {
         margin:1em auto;
         display: block !important;

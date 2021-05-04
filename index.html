@@ -7,6 +7,7 @@
   <meta name="google-signin-client_id" content="258212949096-ffidj50r8jftp5s6duc93e4927pskcdd.apps.googleusercontent.com">
   <link rel="stylesheet" href="CSS/bootstrap.css">
   <link rel="stylesheet" href="CSS/index.css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <title>LOGIN PAGE</title>
 
@@ -26,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto ">
           <li class="nav-item active">
-            <a class="nav-link" onclick="fb_login()" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link"  href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -42,20 +43,23 @@
   </div>
   <div class="container-fluid heading">
     <div class="row">
-      <div class="col-xl-5 py-4">
+      <div class="col-xl-5 py-4 mb-auto">
         <h1 class="text-white header-text display-lg-5">Where the world builds software</h1>
         <h3 class="sub-text">Millions of developers and companies build, ship, and maintain their software on GitHub—the
           largest
           and most advanced development platform in the world.</h3>
         <div class="btn-login">
           <!-- <div class="text-white " >Sign In Options</div> -->
-          <div class="g-signin2 d-inline-block" data-onsuccess="onSignIn"  data-auto_select="false"></div>
-
-          <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-          <div id="status" class="text-white">1</div>
-          <a id="github-button" class="btn btn-success btn-social btn-github">
+          <!-- <div id="gSignInWrapper">
+          <div id="customBtn" class=" g-signin2 btn google customGPlusSignIn" >Sign in with Google</div></div> -->
+          <!-- <script>startApp();</script> -->
+        <div class="btn btn-div"><div class="google-div"><div class="g-signin2 d-inline-block " data-onsuccess="onSignIn" data-width="170" data-auto_select="false"></div></div>
+</div>
+         <button class="btn btn-div facebook text-white" onclick="fb_login()">Login with Facebook</button>
+         
+          <!-- <a id="github-button" class="btn btn-success btn-social btn-github">
             <i class="fa fa-github"></i> Sign in with Github
-          </a>
+          </a> -->
         </div>
       </div>
       <div class="col-xl-7">
@@ -86,5 +90,6 @@
 <script src="JS/bootstrap.js"></script>
 <script src="JS/index.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 </html>

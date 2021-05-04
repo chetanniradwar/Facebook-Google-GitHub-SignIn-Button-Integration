@@ -1,24 +1,24 @@
 var name, profilepic, email;
 // Google Login 
-function onSignIn(googleUser) {
-  user_detail = window.open('user_details.html', '_self');
+// function onSignIn(googleUser) {
+//   user_detail = window.open('user_details.html', '_self');
 
 
-  var profile = googleUser.getBasicProfile();
+//   var profile = googleUser.getBasicProfile();
 
-  name = profile.getName();
-  profilepic = profile.getImageUrl();
-  email = profile.getEmail();
+//   name = profile.getName();
+//   profilepic = profile.getImageUrl();
+//   email = profile.getEmail();
 
-  //  alert('Name: ' + profile.getName());
-  //  alert('Image URL: ' + profile.getImageUrl());
-  //  alert('Email: ' + profile.getEmail());
-  localStorage.setItem("username", name);
-  localStorage.setItem("picture", profilepic);
-  localStorage.setItem("email", email);
+//   //  alert('Name: ' + profile.getName());
+//   //  alert('Image URL: ' + profile.getImageUrl());
+//   //  alert('Email: ' + profile.getEmail());
+//   localStorage.setItem("username", name);
+//   localStorage.setItem("picture", profilepic);
+//   localStorage.setItem("email", email);
 
 
-}
+// }
 
 // Facebook login
 
@@ -124,3 +124,29 @@ function PlayBack() {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+
+var googleUser = {};
+var startApp = function() {
+  gapi.load('auth2', function(){
+    // Retrieve the singleton for the GoogleAuth library and set up the client.
+    auth2 = gapi.auth2.init({
+      client_id: '258212949096-ffidj50r8jftp5s6duc93e4927pskcdd.apps.googleusercontent.com',
+      cookiepolicy: 'single_host_origin',
+      // Request scopes in addition to 'profile' and 'email'
+      //scope: 'additional_scope'
+    });
+    attachSignin(document.getElementById('customBtn'));
+  });
+};
+
+function attachSignin(element) {
+  console.log(element.id);
+  auth2.attachClickHandler(element, {},
+      function(googleUser) {
+        document.getElementById('name').innerText = "Signed in: " +
+            googleUser.getBasicProfile().getName();
+      }, function(error) {
+        alert(JSON.stringify(error, undefined, 2));
+      });
+}
