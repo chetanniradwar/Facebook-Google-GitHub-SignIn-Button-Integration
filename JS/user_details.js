@@ -24,8 +24,17 @@ function signOut()
       google_signOut();
     }
 });
+
+window.fbAsyncInit = function () {
+    FB.init({
+      appId: '367986131263200',
+      cookie: true,
+      xfbml: true,
+      version: 'v10.0'
+    });
+
     FB.getLoginStatus(function (response){
-    if(response.status==='connected')
+    if(response.status ==='connected')
         fb_logout();
     });
 }
