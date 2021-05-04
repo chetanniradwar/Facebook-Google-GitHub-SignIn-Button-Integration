@@ -48,7 +48,7 @@ video{
   object-position: center center;  */
   /* left: 50%; */
   /* max-height: 100%; */
-  border: 2px solid grey !important;
+  /* border: 2px solid grey !important; */
   max-width: 140%;
    position: absolute; 
    left:-20%;
@@ -120,8 +120,8 @@ video{
 .svg-pic
 {
     position: relative;
-  border: 3px solid red;
- 
+  /* border: 3px solid red;
+  */
 
   height: 70vh;
 }
@@ -132,7 +132,8 @@ video{
     height: 3%;
 }
 #astronut
-{ border: 2px solid violet;
+{
+     /* border: 2px solid violet; */
     position: absolute;
     max-width: 40%;
     right: 0%;

@@ -1,48 +1,28 @@
 var name, profilepic, email;
+
+
 // Google Login 
-// function onSignIn(googleUser) {
-//   user_detail = window.open('user_details.html', '_self');
+function onSignIn(googleUser) {
+  user_detail = window.open('user_details.html', '_self');
 
 
-//   var profile = googleUser.getBasicProfile();
+  var profile = googleUser.getBasicProfile();
 
-//   name = profile.getName();
-//   profilepic = profile.getImageUrl();
-//   email = profile.getEmail();
+  name = profile.getName();
+  profilepic = profile.getImageUrl();
+  email = profile.getEmail();
 
-//   //  alert('Name: ' + profile.getName());
-//   //  alert('Image URL: ' + profile.getImageUrl());
-//   //  alert('Email: ' + profile.getEmail());
-//   localStorage.setItem("username", name);
-//   localStorage.setItem("picture", profilepic);
-//   localStorage.setItem("email", email);
+  //  alert('Name: ' + profile.getName());
+  //  alert('Image URL: ' + profile.getImageUrl());
+  //  alert('Email: ' + profile.getEmail());
+  localStorage.setItem("username", name);
+  localStorage.setItem("picture", profilepic);
+  localStorage.setItem("email", email);
 
-
-// }
+}
 
 // Facebook login
 
-
-// function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-//   console.log('statusChangeCallback');
-//   console.log(response);                   // The current login status of the person.
-//   if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-//     // testAPI(); 
-//     fb_login();
-//     // FB.login();
-
-
-//   } else {                                 // Not logged into your webpage or we are unable to tell.
-//     document.getElementById('status').innerHTML = 'Please log ' +
-//       'into this webpage.';
-//   }
-// }
-
-// function checkLoginState() {               // Called when a person is finished with the Login Button.
-//   FB.getLoginStatus(function (response) {   // See the onlogin handler
-//     statusChangeCallback(response);
-//   });
-// }
 window.fbAsyncInit = function () {
   FB.init({
     appId: '367986131263200',
@@ -79,20 +59,8 @@ function fb_login() {
   }, { scope: 'email,public_profile' });
 
 }
-// function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-//   console.log('Welcome!  Fetching your information.... ');
-//   FB.api('/me', function (response) {
-//     console.log('Successful login for: ' + response.name);
-//     document.getElementById('status').innerHTML =
-//       'Thanks for logging in, ' + response.name + '!' + response.public_profile + response.email;
-//   });
-// }
-
-
-
 
 //  Video playback Speed
-
 
 function PlayBack() {
 
@@ -102,21 +70,6 @@ function PlayBack() {
   // alert(vdo.playbackRate);
 }
 
-
-
-
-// window.fbAsyncInit = function () {
-//   FB.init({
-//     appId: '{your-app-id}',
-//     cookie: true,
-//     xfbml: true,
-//     version: '{api-version}'
-//   });
-
-//   FB.AppEvents.logPageView();
-
-// };
-
 (function (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) { return; }
@@ -124,29 +77,3 @@ function PlayBack() {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
-
-var googleUser = {};
-var startApp = function() {
-  gapi.load('auth2', function(){
-    // Retrieve the singleton for the GoogleAuth library and set up the client.
-    auth2 = gapi.auth2.init({
-      client_id: '258212949096-ffidj50r8jftp5s6duc93e4927pskcdd.apps.googleusercontent.com',
-      cookiepolicy: 'single_host_origin',
-      // Request scopes in addition to 'profile' and 'email'
-      //scope: 'additional_scope'
-    });
-    attachSignin(document.getElementById('customBtn'));
-  });
-};
-
-function attachSignin(element) {
-  console.log(element.id);
-  auth2.attachClickHandler(element, {},
-      function(googleUser) {
-        document.getElementById('name').innerText = "Signed in: " +
-            googleUser.getBasicProfile().getName();
-      }, function(error) {
-        alert(JSON.stringify(error, undefined, 2));
-      });
-}

@@ -47,16 +47,12 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
 
 // google sign out
 function google_signOut() {
-
-  
-
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
             console.log('User signed out.');
         });
 
     window.open('index.html','_self');
-  
    
 }
 
