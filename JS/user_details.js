@@ -32,7 +32,7 @@ window.fbAsyncInit = function () {
       xfbml: true,
       version: 'v10.0'
     });
-
+}
     FB.getLoginStatus(function (response){
     if(response.status ==='connected')
         fb_logout();
