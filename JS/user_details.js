@@ -80,8 +80,8 @@ function dothis() {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          client_id: 'eef11ffcaa8e17a82171',
-          client_secret: 'ca113141f1fe887f71b40efdf0f768dc1c83d4f6',
+          client_id: '/',
+          client_secret: '',
           code: access_token,
         })
       })
