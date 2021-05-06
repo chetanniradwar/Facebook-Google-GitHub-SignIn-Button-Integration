@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="CSS/index.css">
   <script src="https://apis.google.com/js/api:client.js"></script>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
   <title>LOGIN PAGE</title>
 
 </head>
@@ -53,15 +55,15 @@
         <div class="btn btn-div"><div class="google-div"><div class="g-signin2 d-inline-block " data-onsuccess="onSignIn" data-width="170" data-auto_select="false"></div></div>
 </div>
          <button class="btn btn-div facebook text-white" onclick="fb_login()">Login with Facebook</button>
-         
+         <button class="btn btn-div github text-white" onclick="github_login()">Login with GitHub</button>
          
         </div>
       </div>
       <div class="col-xl-7">
         <div class="video">
-          <video id="playback" onplay="PlayBack()" loop autoplay >
+          <!-- <video id="playback" onplay="PlayBack()" loop autoplay >
             <source src="video/How we built the GitHub globe - The GitHub Blog_2.mp4" type="video/mp4">
-          </video>
+          </video> -->
         </div>
 
       </div>
