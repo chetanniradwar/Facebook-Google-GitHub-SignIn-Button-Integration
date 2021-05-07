@@ -1,6 +1,6 @@
 body{
-    background-color: rgb(17, 8, 27);
-    overflow-x: hidden;
+    background-color: rgb(5 13 31);
+    overflow-x: unset !important;
 
 }
 html{
@@ -19,9 +19,9 @@ html{
 {
     margin-top: 4px;
    display: inline-block !important;
-    border: 5px solid #fff;
+    border: 8px solid #fff;
     padding: 0 0;
-    height:42px;
+    height:45px;
     border-radius: 4px;
 }
 
@@ -36,7 +36,7 @@ html{
 .video{
     
     position: relative;
-    z-index: -5 !important;
+    z-index: -100 !important;
 
 
    
@@ -49,7 +49,7 @@ video{
   /* left: 50%; */
   /* max-height: 100%; */
   /* border: 2px solid grey !important; */
-  max-width: 140%;
+  max-width: 130%;
    position: absolute; 
    left:-20%;
    right:-20%;
@@ -75,7 +75,7 @@ video{
     #astronut
     {
        
-        top: -20em !important; 
+        top: -24em !important; 
     }
  @media (max-width:1200px)
 {
@@ -86,7 +86,7 @@ video{
     #astronut
     {
         right: 30% !important;
-        top: -10em !important; 
+        top: -18em !important; 
     }
     
 }
@@ -106,7 +106,7 @@ video{
     }
 }
 
-@media (max-width:500px)
+@media (max-width:870px)
 {
     #astronut
     {
@@ -137,7 +137,7 @@ video{
     position: absolute;
     max-width: 40%;
     right: 0%;
-   top:-30em;
+   top:-31em;
    
     z-index: 500;
 }
@@ -157,5 +157,5 @@ video{
 
 .heading .row
 {
-    height:90vh;
+    height:80vh;
 }
