@@ -1,4 +1,4 @@
-# Login-User-Authentication
+# Facebook-Google-GitHub-SignIn-Button-Integration
 ## See the website here:
 1. [Netlify](https://festive-agnesi-4abc13.netlify.app/)
 2. [Github Pages](https://chetannirdwar.github.io/Login-User-Authentication/)
