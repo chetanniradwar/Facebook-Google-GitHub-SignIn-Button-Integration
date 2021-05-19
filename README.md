@@ -1,7 +1,7 @@
 # Facebook-Google-GitHub-SignIn-Button-Integration
 ## See the website here:
 1. [Netlify](https://festive-agnesi-4abc13.netlify.app/)
-2. [Github Pages](https://chetannirdwar.github.io/Login-User-Authentication/)
+2. [Github Pages](https://chetannirdwar.github.io/Facebook-Google-GitHub-SignIn-Button-Integration/)
 
 ## Discription -
 1. Integrated Google sign in button , Facebook sign in button , GitHub sign in button
