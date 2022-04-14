@@ -119,8 +119,7 @@ function github_login() {
 
 //  Video playback Speed
 function PlayBack() {
- let vdo = await document.getElementById("playback");
-   // alert(vdo.playbackRate);
+ let vdo = document.getElementById("playback");
   if(vdo!=null)
-  vdo.playbackRate= 1
+  vdo.playbackRate= 0.5
 }
